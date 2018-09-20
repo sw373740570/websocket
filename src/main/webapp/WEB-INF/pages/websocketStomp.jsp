@@ -20,7 +20,7 @@
     var socket = new SockJS("http://localhost:8088/endpointService");
     // 获取 STOMP 子协议的客户端对象
     var stompClient = Stomp.over(socket);
-    var name = "test" + parseInt(Math.random() * 10);
+    var name = "test";
     console.log(name);
     // 向服务器发起websocket连接并发送CONNECT帧
     stompClient.connect({token:name},function (frame) {

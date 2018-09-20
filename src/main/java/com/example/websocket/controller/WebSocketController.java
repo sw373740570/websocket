@@ -28,7 +28,8 @@ public class WebSocketController {
 
     @MessageMapping("/welcome")
     @SendTo("/topic/getResponse")
-    public String say(Message message, @Header("name") String name) {
+    public String say(Message message, @Header("name") String name) throws Exception {
+        Thread.sleep(3000);
         return "HELLO: This is " + name + ",says:" +  message.getContent();
     }
 
